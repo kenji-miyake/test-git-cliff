@@ -34,16 +34,19 @@ footer = """
 conventional_commits = true
 # regex for parsing and grouping commits
 commit_parsers = [
+    # Comply with https://github.com/commitizen/conventional-commit-types/blob/c3a9be4c73e47f2e8197de775f41d981701407fb/index.json
     { message = "^feat", group = "Features"},
     { message = "^fix", group = "Bug Fixes"},
     { message = "^doc", group = "Documentation"},
-    { message = "^perf", group = "Performance"},
-    { message = "^refactor", group = "Refactor"},
-    { message = "^style", group = "Styling"},
-    { message = "^test", group = "Testing"},
+    { message = "^style", group = "Styles"},
+    { message = "^refactor", group = "Code Refactoring"},
+    { message = "^perf", group = "Performance Improvements"},
+    { message = "^test", group = "Tests"},
+    { message = "^build", group = "Builds"},
+    { message = "^ci", group = "Continuous Integrations"},
+    { message = "^chore", group = "Chores"},
+    { message = "^revert", group = "Reverts"},
     { message = "^chore\\(release\\): prepare for", skip = true},
-    { message = "^chore", group = "Miscellaneous Tasks"},
-    { body = ".*security", group = "Security"},
 ]
 # filter out the commits that are not matched by commit parsers
 filter_commits = false
